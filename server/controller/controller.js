@@ -1,5 +1,5 @@
 var userdb = require("../model/model");
-const pdfService = require("../services/pdf-service");
+// const pdfService = require("../services/pdf-service");
 exports.create = (req, res) => {
   if (!req.body) {
     res.status(400).send({ message: "user cannot be emity" });
@@ -7,14 +7,12 @@ exports.create = (req, res) => {
   const user = new userdb({
     fullName: req.body.fullName,
     passportNum: req.body.passportNum,
-    requestedDate: req.body.requestedDate,
-    collectedDate: req.body.collectedDate,
     dbo: req.body.dbo,
     nationality: req.body.nationality,
     phone: req.body.phone,
+    result: req.body.result,
     resultDate: req.body.resultDate,
     reviewedBy: req.body.reviewedBy,
-    sampleId: req.body.sampleId,
     sex: req.body.sex,
   });
 

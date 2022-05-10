@@ -543,7 +543,7 @@ body {
             <div class="col-md-5 text-right order-2" style="float:right;">
 
 
-                                <div class="result-box result-nagative">Not Detected (Negative)</div>
+                                <div class="result-box result-nagative"><%= user.result%></div>
                     
                     
             </div>
@@ -596,13 +596,13 @@ body {
             <div class="row">
                 <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12" style=" padding:10px;">
                     <label class=" col-form-label label" for="RequestDate">Request Date :</label><br>
-                    <label class=" col-form-label text-label" id="RequestDate"> <%= user.requestedDate%></label>
+                    <label class=" col-form-label text-label" id="RequestDate"> 2022</label>
                     <div class="div-line"></div>
                 </div>
 
                 <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12" style=" padding:10px;">
                     <label class=" col-form-label label" for="CollectionDate">Collection Date :</label><br>
-                    <label class=" col-form-label text-label" id="CollectionDate"><%= user.collectedDate%></label>
+                    <label class=" col-form-label text-label" id="CollectionDate">2022</label>
                     <div class="div-line"></div>
                 </div>
             </div>
@@ -618,7 +618,7 @@ body {
 
                 <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12" style=" padding:10px;">
                     <label class=" col-form-label label" for="AccNumber">Accession No :</label><br>
-                    <label class=" col-form-label text-label" id="AccNumber"><%= user.sampleId%></label>
+                    <label class=" col-form-label text-label" id="AccNumber">sample Id</label>
                     <div class="div-line"></div>
                 </div>
             </div>

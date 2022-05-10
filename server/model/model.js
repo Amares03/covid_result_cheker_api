@@ -10,18 +10,6 @@ const cvSchema = mongoose.Schema(
       type: String,
       default: "",
     },
-    requestedDate: {
-      type: String,
-      default: "",
-    },
-    collectedDate: {
-      type: String,
-      default: "",
-    },
-    collectedLocation: {
-      type: String,
-      default: " ICL -AA1",
-    },
     dbo: {
       type: String,
       default: "",
@@ -46,25 +34,9 @@ const cvSchema = mongoose.Schema(
       type: String,
       default: "Dr.mesfin Negussie",
     },
-    sampleId: {
-      type: String,
-      default: "WD456248",
-    },
     sex: {
       type: String,
       default: "",
-    },
-    specimenType: {
-      type: String,
-      default: "Nasopharngeal Swab",
-    },
-    testMethod: {
-      type: String,
-      default: "RT-PCR-QUALITATIVE Detection of nucleic Acid",
-    },
-    testPerformedBy: {
-      type: String,
-      default: "International Clinical Laburatory",
     },
   },
   { timestamps: true }
