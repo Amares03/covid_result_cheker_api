@@ -37,7 +37,11 @@ exports.find = (req, res) => {
   userdb
     .findById(id)
     .then((data) => {
-      res.render("index", { user: data });
+      if (!data) {
+        res.status(500).render("errorpage");
+      } else {
+        res.render("index", { user: data });
+      }
     })
     .catch((err) => {
       res.status(500).render("errorpage");
@@ -50,7 +54,8 @@ exports.update = (req, res) => {
     return res.status(400).send({ message: "Update Cannot be empity" });
   }
   const id = req.params.id;
-  Userdb.findByIdAndUpdate(id, req.body)
+  userdb
+    .findByIdAndUpdate(id, req.body, { useFindAndModify: false })
     .then((data) => {
       if (!data) {
         res.status(404).send(`User by id ${id} not Found`);
@@ -66,7 +71,8 @@ exports.update = (req, res) => {
 // delete user
 exports.delete = (req, res) => {
   const id = req.params.id;
-  Userdb.findByIdAndDelete(id)
+  userdb
+    .findByIdAndDelete(id)
     .then((data) => {
       if (!data) {
         res.status(404).send({ message: `User by id ${id} is not found` });
