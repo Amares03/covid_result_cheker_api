@@ -48,6 +48,24 @@ exports.find = (req, res) => {
     });
 };
 
+exports.findByPassport = (req, res) => {
+  if (!req.body) {
+    res.status(400).send({ message: "user cannot be emity" });
+  }
+  const id = req.params.id;
+  userdb
+    .findOne({ passportNum: id })
+    .then((data) => {
+      if (!data) {
+        res.status(500).render("errorpage");
+      } else {
+        res.send(data);
+      }
+    })
+    .catch((err) => {
+      res.status(500).render("errorpage");
+    });
+};
 // update user
 exports.update = (req, res) => {
   if (!req.body) {
