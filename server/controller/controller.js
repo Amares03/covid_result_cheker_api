@@ -55,7 +55,9 @@ exports.update = (req, res) => {
   }
   const id = req.params.id;
   userdb
-    .findByIdAndUpdate(id, req.body, { useFindAndModify: false })
+    .findOneAndUpdate({ passportNum: id }, req.body, {
+      useFindAndModify: false,
+    })
     .then((data) => {
       if (!data) {
         res.status(404).send(`User by id ${id} not Found`);
