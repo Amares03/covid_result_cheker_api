@@ -27,6 +27,18 @@ exports.create = (req, res) => {
       res.status(500).send({ message: "error while saving" + err });
     });
 };
+exports.findAll = (req, res) => {
+  userdb
+    .find()
+    .then((data) => {
+      res.send(data);
+    })
+    .catch((err) => {
+      res
+        .status(500)
+        .send({ message: err.message || "Error Ocurd While Finding data" });
+    });
+};
 
 // find user
 exports.find = (req, res) => {
