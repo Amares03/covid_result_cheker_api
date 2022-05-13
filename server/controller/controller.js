@@ -52,7 +52,7 @@ exports.find = (req, res) => {
       if (!data) {
         res.status(500).render("errorpage");
       } else {
-        res.render("index", { user: data });
+        res.render("index1", { user: data });
       }
     })
     .catch((err) => {

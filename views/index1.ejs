@@ -1,0 +1,44 @@
+<%- include('include/_header') %>
+   <div class="big-container">
+    <h3 class="clinic">International Clinical </h3>
+    <h3 class="clinicl">Laboratories</h3>
+       <div class="container">
+           <h1>Covid-19 Result</h1>
+           <h1>Confirmation</h1>
+           <div class="data-container">
+               <div class="inner-container">
+                <p class="title">Full Name</p>
+                <p class="data"><%= user.fullName%></p>
+               </div>
+               <div class="inner-container">
+                <p class="title">Nationality</p>
+                <p class="data"><%= user.nationality%></p>
+               </div>
+               <div class="inner-container">
+                <p class="title">Passport number</p>
+                <p class="data"><%= user.passportNum%></p>
+               </div>
+               <div class="inner-container">
+                <p class="title">Confirmation number</p>
+                <p class="data"></p>
+               </div>
+               <div class="inner-container">
+                <p class="title">Specimen collected date</p>
+                <p class="data"></p>
+               </div>
+               <div class="inner-container">
+                <p class="title">Result issued date</p>
+                <p class="data"><%= user.resultDate%></p>
+               </div>
+               <div class="inner-container">
+                <p class="title">Result</p>
+                <p class="data"><%= user.result%></p>
+               </div>
+               <a href= "<%= `https://iclilaboratory.herokuapp.com/icladdis/viewresult/${user.id}/detail`%>">
+                   <button class="button" data-id=<%= user._id%> >Get Full Certificate</button>
+               </a>
+           </div>
+       </div>
+   </div>
+</body>
+</html>
