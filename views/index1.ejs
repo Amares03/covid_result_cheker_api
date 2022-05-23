@@ -1,8 +1,5 @@
 <%- include('include/_header') %>
-<img src="./img/logo.png" alt="">
    <div class="big-container">
-    <h3 class="clinic">Covid Result </h3>
-    <h3 class="clinicl">Laboratories</h3>
        <div class="container">
            <h1>Covid-19 Result</h1>
            <h1>Confirmation</h1>
@@ -12,31 +9,31 @@
                 <p class="data"><%= user.fullName%></p>
                </div>
                <div class="inner-container">
-                <p class="title">Nationality</p>
-                <p class="data"><%= user.nationality%></p>
-               </div>
-               <div class="inner-container">
                 <p class="title">Passport number</p>
                 <p class="data"><%= user.passportNum%></p>
                </div>
                <div class="inner-container">
-                <p class="title">Confirmation number</p>
-                <p class="data"></p>
+                <p class="title">Date of Birth</p>
+                <p class="data"><%= user.dbo%></p>
                </div>
                <div class="inner-container">
-                <p class="title">Specimen collected date</p>
-                <p class="data"></p>
+                <p class="title"> Gender</p>
+                <p class="data"><%= user.sex%></p>
                </div>
                <div class="inner-container">
-                <p class="title">Result issued date</p>
-                <p class="data"><%= user.resultDate%></p>
+                <p class="title">Nationality</p>
+                <p class="data"><%= user.nationality%></p>
                </div>
                <div class="inner-container">
-                <p class="title">Result</p>
-                <p class="data"><%= user.result%></p>
-               </div>
+                   <p class="title">Result</p>
+                   <p class="data"><%= user.result%></p>
+                </div>
+                <div class="inner-container">
+                 <p class="title">Result issued date</p>
+                 <p class="data"><%= user.resultDate%></p>
+                </div>
                <a href= "/">
-                   <button class="button" data-id=<%= user._id%> >Get Full Certificate</button>
+                   <button class="button" data-id=<%= user._id%> >DOWNLOAD PDF</button>
                </a>
            </div>
        </div>
