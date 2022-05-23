@@ -47,7 +47,7 @@ exports.find = (req, res) => {
   }
   const id = req.params.id;
   userdb
-    .findById(id)
+    .findOne({ passportNum: id })
     .then((data) => {
       if (!data) {
         res.status(500).render("errorpage");
@@ -104,7 +104,7 @@ exports.update = (req, res) => {
 exports.delete = (req, res) => {
   const id = req.params.id;
   userdb
-    .findByIdAndDelete(id)
+    .findOneAndDelete({ passportNum: id })
     .then((data) => {
       if (!data) {
         res.status(404).send({ message: `User by id ${id} is not found` });
@@ -124,7 +124,7 @@ exports.pdfGenerate = (req, res, next) => {
   }
   const id = req.params.id;
   userdb
-    .findById(id)
+    .findOne({ passportNum: id })
     .then((data) => {
       pdfService.buldPdf(data);
 
