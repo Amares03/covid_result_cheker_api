@@ -126,7 +126,7 @@ exports.pdfGenerate = (req, res, next) => {
   userdb
     .findOne({ passportNum: id })
     .then((data) => {
-      pdfService.buldPdf(data);
+      pdfService.buldQr(data);
 
       setTimeout(
         () => {

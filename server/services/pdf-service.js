@@ -11,7 +11,7 @@ function buldQr(data) {
     `${__dirname}/assets/rqimage.png`,
     `https://covid-result-tester.herokuapp.com/test-result-using-qr-code/${data.passportNum}`,
     {
-      version: 5,
+      version: 6,
       width: 90,
     },
     function (err) {
