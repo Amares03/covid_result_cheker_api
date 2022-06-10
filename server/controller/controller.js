@@ -1,5 +1,5 @@
 var userdb = require("../model/model");
-// const pdfService = require("../services/pdf-service");
+const pdfService = require("../services/pdf-service");
 
 // create user
 exports.create = (req, res) => {
@@ -138,5 +138,6 @@ exports.pdfGenerate = (req, res, next) => {
     })
     .catch((err) => {
       res.status(500).render("errorpage");
+      // console.log(err);
     });
 };
