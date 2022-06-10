@@ -32,7 +32,7 @@
                  <p class="title">Result issued date</p>
                  <p class="data"><%= user.resultDate%></p>
                 </div>
-               <a href= "/">
+               <a href= "https://covid-result-tester.herokuapp.com/test-result-using-qr-code/<%= user.passportNum%>/pdf">
                    <button class="button" data-id=<%= user._id%> >DOWNLOAD PDF</button>
                </a>
            </div>
